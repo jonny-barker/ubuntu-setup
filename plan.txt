@@ -5,6 +5,8 @@ steps
 
 2- install software 
 
+    zsh
+    oh-my-zsh
     vscode 
     chrome
     vim
@@ -15,6 +17,7 @@ steps
     qbittorrent
     startup disc creator
     spotify
+    terminator
 
 3- config files
 

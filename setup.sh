@@ -1,14 +1,68 @@
-#! /bin/bash
+#!/bin/bash
 
-# Install packages
+# Update system
 sudo apt-get update
-sudo apt-get install -y package1 package2
+sudo apt-get upgrade
 
-# Create a new directory
-mkdir ~/new_directory
+# Install software
+sudo apt-get install zsh neovim qbittorrent terminator gnome-tweak-tool
 
-# Download a file from a URL
-curl -o ~/file.txt https://example.com/file.txt
+# Install Oh-My-Zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# Modify a configuration file
-sudo sed -i 's/old_value/new_value/g' /etc/config.conf
+# Install Visual Studio Code
+sudo apt-get install software-properties-common apt-transport-https wget
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+sudo apt-get update
+sudo apt-get install code
+
+# Install Chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt-get install ./google-chrome-stable_current_amd64.deb
+
+# Install Vim
+sudo apt-get install vim
+
+# Install Mailspring
+wget https://updates.getmailspring.com/download?platform=linuxDeb -O mailspring.deb
+sudo apt-get install ./mailspring.deb
+
+# Install Windscribe
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key FDC247B7
+echo 'deb https://repo.windscribe.com/ubuntu bionic main' | sudo tee /etc/apt/sources.list.d/windscribe-repo.list
+sudo apt-get update
+sudo apt-get install windscribe-cli
+
+# Install Insomnia
+echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
+    | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
+    | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install insomnia
+
+# Install Startup Disc Creator
+sudo apt-get install usb-creator-gtk
+
+# Install Spotify
+curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt-get update
+sudo apt-get install spotify-client
+
+# Config files
+# Dock orientation
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'BOTTOM'
+
+# Keyboard remap
+# Example: map Caps Lock to Control
+gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
+
+# Keyboard shortcuts
+# Example: set shortcut for opening Terminal to Ctrl+Alt+T
+gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "<Ctrl><Alt>t"
+
+# Privacy settings
+# Example: disable usage data collection
+gsettings set org.gnome.usage-analytics allow-report false
