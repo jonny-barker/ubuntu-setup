@@ -1,0 +1,28 @@
+
+steps 
+
+1- get updates of system
+
+2- install software 
+
+    vscode 
+    chrome
+    vim
+    mailspring
+    windscribe
+    insomnia
+    neovim
+    qbittorrent
+    startup disc creator
+    spotify
+
+3- config files
+
+    dock orientation 
+    keyboard remap?
+    keyboard shortcuts
+    privacy settings 
+
+
+
+    
