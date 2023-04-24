@@ -32,7 +32,7 @@ sudo apt-get update
 sudo apt-get install windscribe-cli
 
 # snap store
-sudo snap install insomnia mailspring spotify
+sudo snap install insomnia mailspring spotify bitwarden
 
 # Install Startup Disc Creator
 sudo apt-get install usb-creator-gtk
