@@ -5,7 +5,7 @@ sudo apt-get update
 sudo apt-get upgrade
 
 # Install software
-sudo apt-get install zsh neovim qbittorrent terminator gnome-tweak-tool
+sudo apt-get install zsh qbittorrent terminator curl 
 
 # Install Oh-My-Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -21,12 +21,9 @@ sudo apt-get install code
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt-get install ./google-chrome-stable_current_amd64.deb
 
-# Install Vim
+# Install Vim and NeoVim
 sudo apt-get install vim
-
-# Install Mailspring
-wget https://updates.getmailspring.com/download?platform=linuxDeb -O mailspring.deb
-sudo apt-get install ./mailspring.deb
+sudo snap install --beta nvim --classic
 
 # Install Windscribe
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key FDC247B7
@@ -34,22 +31,11 @@ echo 'deb https://repo.windscribe.com/ubuntu bionic main' | sudo tee /etc/apt/so
 sudo apt-get update
 sudo apt-get install windscribe-cli
 
-# Install Insomnia
-echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
-    | sudo tee -a /etc/apt/sources.list.d/insomnia.list
-wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
-    | sudo apt-key add -
-sudo apt-get update
-sudo apt-get install insomnia
+# snap store
+sudo snap install insomnia mailspring spotify
 
 # Install Startup Disc Creator
 sudo apt-get install usb-creator-gtk
-
-# Install Spotify
-curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt-get update
-sudo apt-get install spotify-client
 
 # Config files
 # Dock orientation
