@@ -4,8 +4,22 @@
 sudo apt-get update
 sudo apt-get upgrade
 
-# Install software
-sudo apt-get install zsh qbittorrent terminator curl 
+# Install core software
+sudo apt-get install git zsh qbittorrent terminator curl postgresql postgresql-contrib
+
+#create bash profile
+touch ~/.bash_profile
+
+#install node version manager and node
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash && source ~/.nvm/nvm.sh
+nvm install node
+nvm use node
+
+#create postgres user
+sudo -u postgres createuser --superuser $USER && sudo -u postgres createdb $USER 
+
+#store git credentials on computer
+git config --global credential.helper store
 
 # Install Oh-My-Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
