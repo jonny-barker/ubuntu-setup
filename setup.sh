@@ -26,10 +26,8 @@ sudo apt-get install vim
 sudo snap install --beta nvim --classic
 
 # Install Windscribe
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key FDC247B7
-echo 'deb https://repo.windscribe.com/ubuntu bionic main' | sudo tee /etc/apt/sources.list.d/windscribe-repo.list
-sudo apt-get update
-sudo apt-get install windscribe-cli
+wget https://windscribe.com/install/desktop/linux_deb_x64
+sudo dpkg -i ./Downloads/windscribe.com/install/desktop/linux_deb_x64
 
 # snap store
 sudo snap install insomnia mailspring spotify bitwarden
@@ -37,18 +35,4 @@ sudo snap install insomnia mailspring spotify bitwarden
 # Install Startup Disc Creator
 sudo apt-get install usb-creator-gtk
 
-# Config files
-# Dock orientation
-gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'BOTTOM'
-
-# Keyboard remap
-# Example: map Caps Lock to Control
-gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
-
-# Keyboard shortcuts
-# Example: set shortcut for opening Terminal to Ctrl+Alt+T
-gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "<Ctrl><Alt>t"
-
-# Privacy settings
-# Example: disable usage data collection
-gsettings set org.gnome.usage-analytics allow-report false
+#config files below 
